@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awk '/enp5s0/ {i++; rx[i]=$2/512; tx[i]=$10/512}; END{printf " %.2fKB/s   %.2fKB/s\n",rx[2]-rx[1],tx[2]-tx[1]}'  <(cat /proc/net/dev; sleep 0.5; cat /proc/net/dev)

@@ -1,0 +1,9 @@
+#!/bin/sh
+if ! gpuload=$(nvidia-smi --format=nounits,csv,noheader --query-gpu=utilization.gpu | xargs echo); then
+    gpuload=0
+fi
+if [ "$gpuload" -gt -1 ]; then
+    echo "$gpuload%"
+else
+    echo "no nvidia driver installed"
+fi

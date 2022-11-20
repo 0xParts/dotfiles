@@ -1,0 +1,10 @@
+#!/bin/bash
+if ! gpumemf=$(nvidia-smi --format=nounits,csv,noheader --query-gpu=memory.free | xargs echo); then
+    gpumemf=-1
+fi
+
+if ! gpumemu=$(nvidia-smi --format=nounits,csv,noheader --query-gpu=memory.used | xargs echo); then
+    gpumemu=-1
+fi
+
+echo "$gpumemu $gpumemf" | awk '{printf("%0.1f / %0.1f GB\n", $1/1024, $2/1024)}'

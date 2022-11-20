@@ -1,0 +1,17 @@
+#!/bin/bash
+
+current=$(xkb-switch)
+echo "$current"
+#current="hr"
+#echo "$current"
+while read button; do
+	if [ $current = 'us' ]; then
+		current='hr'
+		set=$(setxkbmap hr)
+		echo "hr"
+	else
+		current='us'
+		set=$(setxkbmap us)
+		echo "us"
+	fi
+done

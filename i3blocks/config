@@ -1,0 +1,108 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=/home/parts/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# internet speed
+[net-speed]
+interval=1
+
+# public IP
+[public-ip]
+label= 
+interval=10
+
+# local IP
+[iface]
+label= 
+interval=1
+
+# Volume adjust
+[volume-pulseaudio]
+interval=1
+#color=#44ff55
+
+# keyboard layout switch
+[keyboard]
+label=KB: 
+interval=persist
+color=#ed9f4c
+
+# Disk usage
+[disk]
+label= 
+interval=1
+
+# Memory usage
+[memory]
+label= 
+interval=1
+
+# CPU temperature
+[temperature]
+label= 
+interval=1
+separator=false
+
+# CPU load in %
+[cpu-load-percentage]
+label= 
+interval=1
+min_width=60
+align=center
+separator=false
+
+# CPU load
+[load_average]
+label= 
+interval=1
+
+# GPU temperature
+[gpu-temp]
+label= 
+interval=1
+separator=false
+
+# GPU load
+[gpu-load-nvidia]
+label= 
+interval=1
+separator=false
+min_width=60
+align=center
+
+# GPU memory
+[gpu-memory]
+label= 
+interval=1
+
+# Date Time
+[time]
+command=date '+%d.%m.%Y %H:%M:%S'
+interval=1
