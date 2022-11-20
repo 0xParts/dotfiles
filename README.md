@@ -9,3 +9,4 @@ dotfiles for my arch rice
 + display manager: lightdm (slick-greeter)
 + font: Fira Code
 + terminal: Alacritty
++ launch menu: rofi
